@@ -1,5 +1,5 @@
 # Solution 1: Using hashmap
-class Solution1:
+class Solution:
     def palindrome_permutation(self, string: str) -> bool:
         freq_count = dict()
         for char in string:
@@ -20,27 +20,10 @@ class Solution1:
 # Space Complexity: O(c) ==> O(1)
 
 
-# Solution 2: Using bit vector
-class Solution2:
-    def palindrome_permutation(self, string: str) -> bool:
-        bit_vector = 0
-
-        for char in string:
-            if char.isalpha():
-                char = char.lower()
-                bit_vector ^= 1 << (ord(char) - ord("a"))
-
-        return bit_vector.bit_count() <= 1
-
-# n = len(string)
-# Time Complexity: O(n)
-# Space Complexity: O(1)
-
-
-class TestPalindromePermutationSolution1:
+class TestPalindromePermutation:
     @classmethod
     def setup_class(cls):
-        cls.s = Solution1()
+        cls.s = Solution()
 
     def test_valid_palindrome(self):
         assert self.s.palindrome_permutation("Tact Coa") == True
@@ -51,19 +34,3 @@ class TestPalindromePermutationSolution1:
             "This is not a palindrome") == False
         assert self.s.palindrome_permutation(
             "Random words make nothing") == False
-
-
-class TestPalindromePermutationSolution2:
-    @classmethod
-    def setup_class(cls):
-        cls.s = Solution2()
-
-    def test_valid_palindrome(self):
-        assert self.s.palindrome_permutation("No lemon no melon") == True
-        assert self.s.palindrome_permutation(
-            "Dormitory dirty room yoo") == True
-
-    def test_invalid_palindrome(self):
-        assert self.s.palindrome_permutation(
-            "Never odd or even close") == False
-        assert self.s.palindrome_permutation("test case fail") == False
