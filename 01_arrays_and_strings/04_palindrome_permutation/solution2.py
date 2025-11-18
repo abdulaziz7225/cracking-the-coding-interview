@@ -21,11 +21,11 @@ class TestPalindromePermutation:
         cls.s = Solution()
 
     def test_valid_palindrome(self):
-        assert self.s.palindrome_permutation("No lemon no melon") == True
+        assert self.s.palindrome_permutation("No lemon no melon") is True
         assert self.s.palindrome_permutation(
-            "Dormitory dirty room yoo") == True
+            "Dormitory dirty room yoo") is True
 
     def test_invalid_palindrome(self):
         assert self.s.palindrome_permutation(
-            "Never odd or even close") == False
-        assert self.s.palindrome_permutation("test case fail") == False
+            "Never odd or even close") is False
+        assert self.s.palindrome_permutation("test case fail") is False

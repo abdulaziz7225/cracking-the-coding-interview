@@ -33,23 +33,23 @@ class TestOneAway:
         cls.s = Solution()
 
     def test_replace_character(self):
-        assert self.s.one_away("pale", "bale") == True
-        assert self.s.one_away("pale", "bake") == False
-        assert self.s.one_away("edit", "view") == False
-        assert self.s.one_away("integral", "triangle") == False
-        assert self.s.one_away("abc", "axc") == True
+        assert self.s.one_away("pale", "bale") is True
+        assert self.s.one_away("pale", "bake") is False
+        assert self.s.one_away("edit", "view") is False
+        assert self.s.one_away("integral", "triangle") is False
+        assert self.s.one_away("abc", "axc") is True
 
     def test_insert_character(self):
-        assert self.s.one_away("abc", "abxc") == True
-        assert self.s.one_away("abc", "abcyx") == False
-        assert self.s.one_away("", "a") == True
-        assert self.s.one_away("", "ab") == False
-        assert self.s.one_away("abc", "abcd") == True
-        assert self.s.one_away("abc", "abcdx") == False
+        assert self.s.one_away("abc", "abxc") is True
+        assert self.s.one_away("abc", "abcyx") is False
+        assert self.s.one_away("", "a") is True
+        assert self.s.one_away("", "ab") is False
+        assert self.s.one_away("abc", "abcd") is True
+        assert self.s.one_away("abc", "abcdx") is False
 
     def test_remove_character(self):
-        assert self.s.one_away("pale", "ple") == True
-        assert self.s.one_away("pales", "pale") == True
-        assert self.s.one_away("a", "") == True
-        assert self.s.one_away("abc", "ab") == True
-        assert self.s.one_away("abcd", "ac") == False
+        assert self.s.one_away("pale", "ple") is True
+        assert self.s.one_away("pales", "pale") is True
+        assert self.s.one_away("a", "") is True
+        assert self.s.one_away("abc", "ab") is True
+        assert self.s.one_away("abcd", "ac") is False

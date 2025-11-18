@@ -25,10 +25,10 @@ class TestCheckPermutation:
         cls.s = Solution()
 
     def test_different_length_strings(self):
-        assert self.s.check_permutation("management", "hospital") == False
+        assert self.s.check_permutation("management", "hospital") is False
 
     def test_anagram_words(self):
-        assert self.s.check_permutation("mastering", "streaming") == True
+        assert self.s.check_permutation("mastering", "streaming") is True
 
     def test_non_anagram_words(self):
-        assert self.s.check_permutation("announcement", "development") == False
+        assert self.s.check_permutation("announcement", "development") is False

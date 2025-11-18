@@ -20,7 +20,7 @@ class TestIsUnique:
         cls.s = Solution()
 
     def test_unique(self):
-        assert self.s.is_unique("exclusion") == True
+        assert self.s.is_unique("exclusion") is True
 
     def test_not_unique(self):
-        assert self.s.is_unique("appearance") == False
+        assert self.s.is_unique("appearance") is False

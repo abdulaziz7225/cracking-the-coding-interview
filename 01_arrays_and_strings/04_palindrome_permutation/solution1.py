@@ -26,11 +26,11 @@ class TestPalindromePermutation:
         cls.s = Solution()
 
     def test_valid_palindrome(self):
-        assert self.s.palindrome_permutation("Tact Coa") == True
-        assert self.s.palindrome_permutation("Red rum sir is murder") == True
+        assert self.s.palindrome_permutation("Tact Coa") is True
+        assert self.s.palindrome_permutation("Red rum sir is murder") is True
 
     def test_invalid_palindrome(self):
         assert self.s.palindrome_permutation(
-            "This is not a palindrome") == False
+            "This is not a palindrome") is False
         assert self.s.palindrome_permutation(
-            "Random words make nothing") == False
+            "Random words make nothing") is False
